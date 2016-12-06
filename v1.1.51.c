@@ -164,6 +164,8 @@ int new_game=0;
 		else if(buffer[0]=='N'|| buffer[0]=='n'){
 		new_game++;
 	}
+	else if(buffer[0]=='\n')
+	return 0;
 	else
 	return 0;
 	}
@@ -191,12 +193,12 @@ int wincond(){
 	int i,p;
 	for(i=0;i<3;i++){
 		for(p=0;p<3;p++){
-			if((wynik[i][p]=='X' && wynik[i][p+1]=='X' && wynik[i][p+2]=='X') || (wynik[i][p]=='X' && wynik[i+1][p]=='X' && wynik[i+2][p]=='X') ||
-			(wynik[i][i]=='X' && wynik[i+1][i+1]=='X' && wynik[i+2][i+2]=='X') || (wynik[i][2-i]=='X' && wynik[i+1][1-i]=='X' && wynik[i+2][0-i]=='X')){
+			if((wynik[i][p]=='X' && wynik[i][p+1]=='X' && wynik[i][p+2]=='X') || (wynik[i][p]=='X' && wynik[i+1][p]=='X' && wynik[i+2][p]=='X')||
+			(wynik[i][i]=='X' && wynik[i+1][i+1]=='X' && wynik[i+2][i+2]=='X') || (wynik[i][2-i]=='X' && wynik[i-1][3-i]=='X' && wynik[i-2][4-i]=='X')){
 				return 1;
 			}
-			else if((wynik[i][p]=='O' && wynik[i][p+1]=='O' && wynik[i][p+2]=='O') || (wynik[i][p]=='O' && wynik[i+1][p]=='O' && wynik[i+2][p]=='O') ||
-						(wynik[i][i]=='O' && wynik[i+1][i+1]=='O' && wynik[i+2][i+2]=='O') || (wynik[i][2-i]=='O' && wynik[i+1][1-i]=='O' && wynik[i+2][0-i]=='O')){
+			else if((wynik[i][p]=='O' && wynik[i][p+1]=='O' && wynik[i][p+2]=='O') || (wynik[i][p]=='O' && wynik[i+1][p]=='O' && wynik[i+2][p]=='O')||
+						(wynik[0][i]=='O' && wynik[1][i+1]=='O' && wynik[2][i+2]=='O') ||  (wynik[i][2-i]=='O' && wynik[i-1][3-i]=='O' && wynik[i-2][4-i]=='O')){
 							return 2;
 						}
 		}			/*Sprawdza, czy odpowiednie pola są zajęte. Jeśli któryś z graczy zapełni
