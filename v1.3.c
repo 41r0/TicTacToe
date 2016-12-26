@@ -41,7 +41,7 @@ int pvp(int choice){
 	time_t tt;//sprawdzamy czas od 01.01.1970
 	int i,p;
 int new_game=0;
-	int input=0;
+	int input=1;
 	while(new_game<1){
 		seed = time(&tt);
 		srand(seed); /* Zmienna bez określonej wartości przyjmuje losowe wartości*/
