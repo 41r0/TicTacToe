@@ -42,7 +42,6 @@ int pvp(int choice){
 	int i,p;
 int new_game=0;
 	int input=0;
-	int ai_move=0;
 	while(new_game<1){
 		seed = time(&tt);
 		srand(seed); /* Zmienna bez określonej wartości przyjmuje losowe wartości*/
